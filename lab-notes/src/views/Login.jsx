@@ -18,8 +18,8 @@ const Login = () => {
                 <label for='password'>Contraseña</label>
                 <input type='password' placeholder='password' className='input' required />
                 <button type='submit' className='button'>Iniciar sesión</button>
-                <div class="question">
-                    <p>¿No tienes una cuenta?<a href={'http://localhost:3000/signup'}>Regístrate aquí</a><br />
+                <div className="question">
+                    <p>¿No tienes una cuenta?<a href={'/signup'}>Regístrate aquí</a><br />
                         ó</p>
                     <button type='submit'><img src={GoogleIcon} alt='logoGoogle' /> Ingresa con Google</button>
                 </div>
