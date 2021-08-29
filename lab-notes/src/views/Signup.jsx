@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom'
 import GoogleIcon from '../assets/GoogleIcon.png';
 import MainNavBar from '../components/MainNavBar';
 import BigLogo from '../components/BigLogo';
-import SigupUser from '../firebase/firebaseAuth.js';
+import { SigupUser, GoogleAuth } from '../firebase/firebaseAuth.js';
 
-function Signup() {
+const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPass] = useState('');
+    let history = useHistory();
 
-    function registerUser(e) {
+    const registerUser = (e) => {
         e.preventDefault();
-        SigupUser(email, password);
+        SigupUser(email, password)
+            .then(() => {
+                alert('Usuario registrado exitosamente')
+                history.push('/mainpage')
+            });
     };
 
     return (
@@ -34,12 +40,12 @@ function Signup() {
                     <p>¿Ya tienes una cuenta?<a href={'/login'}>Inicia sesión aquí</a><br />
                         ó</p>
                 </div>
-                <button type='submit'><img src={GoogleIcon} alt='logoGoogle' />Ingresa con Google</button>
+                <button type='button' onClick={GoogleAuth}><img src={GoogleIcon} alt='logoGoogle' />Ingresa con Google</button>
             </form>
             <div>
             </div>
         </section>
-    )
-}
+    );
+};
 
 export default Signup
