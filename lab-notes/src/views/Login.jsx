@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import GoogleIcon from '../assets/GoogleIcon.png';
 import MainNavBar from '../components/MainNavBar.jsx';
 import BigLogo from '../components/BigLogo.jsx';
+
 import { GoogleAuth, SigninUser } from '../firebase/firebaseAuth.js';
 
 const Login = () => {
@@ -25,9 +26,9 @@ const Login = () => {
             <div>
                 <MainNavBar />
             </div>
-            <form onSubmit={LoginUser} className='loginForm'>
+			<form onSubmit={LoginUser} className='loginForm'>
                 <h1>Iniciar Sesión</h1>
-                <label htmlFor='email'>Correo electrónico</label>
+				<label htmlFor='email'>Correo electrónico</label>
                 <input
                     onChange={(e) => { setEmail(e.target.value) }} type='email' placeholder='email' className='input' required />
                 <label htmlFor='password'>Contraseña</label>
@@ -37,7 +38,7 @@ const Login = () => {
                 <div className="question">
                     <p>¿No tienes una cuenta?<a href={'/signup'}>Regístrate aquí</a><br />
                         ó</p>
-                    <button type='submit' onClick={GoogleAuth}><img src={GoogleIcon} alt='logoGoogle' /> Ingresa con Google</button>
+						<button type='submit' onClick={GoogleAuth}><img src={GoogleIcon} alt='logoGoogle' /> Ingresa con Google</button>
                 </div>
             </form>
             <div>
@@ -45,5 +46,4 @@ const Login = () => {
         </section>
     );
 };
-
 export default Login

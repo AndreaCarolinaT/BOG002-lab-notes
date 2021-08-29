@@ -9,10 +9,11 @@ const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPass] = useState('');
     let history = useHistory();
-
-    const registerUser = (e) => {
+	
+	const registerUser = (e) => {
         e.preventDefault();
-        SigupUser(email, password)
+		
+		SigupUser(email, password)
             .then(() => {
                 alert('Usuario registrado exitosamente')
                 history.push('/mainpage')
@@ -40,12 +41,14 @@ const Signup = () => {
                     <p>¿Ya tienes una cuenta?<a href={'/login'}>Inicia sesión aquí</a><br />
                         ó</p>
                 </div>
-                <button type='button' onClick={GoogleAuth}><img src={GoogleIcon} alt='logoGoogle' />Ingresa con Google</button>
+				
+				<button type='button' onClick={GoogleAuth}><img src={GoogleIcon} alt='logoGoogle' />Ingresa con Google</button>
             </form>
             <div>
             </div>
         </section>
-    );
+		
+		);
 };
 
-export default Signup
+export default Signup 
