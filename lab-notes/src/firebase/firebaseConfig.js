@@ -16,7 +16,8 @@ let config = firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
 const db = firebase.firestore();
+const googleProvider = new firebase.auth.GoogleAuthProvider();
 
 export {
-    config, auth, db
+    config, auth, db, googleProvider
 }
